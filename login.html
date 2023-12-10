@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaspberryPi 登录</title>
+</head>
+<body>
+<script type="module" src="login.js"></script>
+
+    <div class="loginBackground">
+        <!--logo-->
+        <div class="backgroundLogo">
+            <img src="public/vite.svg" loading="lazy" width="96" alt="">
+            <br><br><br>
+        </div>
+        <!-- 登录框 -->
+        <div class="loginBox">
+            <label>用户名</label>
+            <input type="text" autocomplete="on" class="inputN" id="textNam">
+            <label id="textName"></label>
+            <br><br>
+            <label>密码</label>
+            <input type="password" autocomplete="on" class="inputN" id="textPwd">
+            <label id="textPassword"></label>
+            <br><br>
+            <button button="button" id="login"><span>登录</span></button>
+        </div>
+    </div>
+</body>
+</html>

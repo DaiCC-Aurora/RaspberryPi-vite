@@ -30,10 +30,7 @@ function checkInput() {
         document.getElementById("textPassword").innerText = "该字段为必填项";
     }
 
-    if (accInput && pwdInput) {
-        return false;
-    }
-    return true;
+    return !(accInput && pwdInput);
 }
 
 function login() {
@@ -55,8 +52,19 @@ function login() {
         body: JSON.stringify(data)
     })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => checkLogin(data))
         .catch((error) => console.error(error));
+
+    let checkLogin = (data) => {
+        const dataJson = JSON.parse(data);
+        if (dataJson.sccess) {
+            // login succeed
+            window.location.href = "./i ndex.html";
+        } else {
+            // login failed
+            alert(dataJson.message);
+        }
+    }
 }
 
 
